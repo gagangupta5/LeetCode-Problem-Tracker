@@ -1,4 +1,5 @@
-class Solution {
+//Approach 1
+class Solution1 {
     public int diagonalSum(int[][] mat) {
         int n=mat.length;
         int res=0;
@@ -13,6 +14,23 @@ class Solution {
             sc++;
             er--;
             ec--;
+        }
+        return res;
+    }
+}
+
+
+//Approach 2
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int n=mat.length;
+        int res=0;
+        for(int i=0;i<n;i++){
+            //for primary diagonal
+            res+=mat[i][i];
+            //for secondary diagonal
+            if(i!=n-i-1)
+                res+=mat[i][n-i-1];
         }
         return res;
     }
