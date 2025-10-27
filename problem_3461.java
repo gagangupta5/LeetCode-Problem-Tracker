@@ -17,3 +17,20 @@ class Solution1 {
         return false;
     }
 }
+
+
+//Approach 2
+class Solution {
+    public boolean hasSameDigits(String s) {
+        int n=s.length();
+        char[] sArr=s.toCharArray();
+        for(int i=1;i<n-1;i++){
+            for(int j=0;j<n-i;j++){
+                int x=sArr[j]-'0';
+                int y=sArr[j+1]-'0';
+                sArr[j]=(char)((x+y)%10+'0');
+            }
+        }
+        return sArr[0]==sArr[1];
+    }
+}
