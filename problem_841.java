@@ -13,3 +13,25 @@ class Solution1 {
             solve(x,rooms);
     }
 }
+
+
+//Solution 2 Using BFS
+class Solution {
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+        Queue<Integer> queue=new LinkedList<>();
+        HashSet<Integer> visit=new HashSet<>();
+        queue.add(0);
+        visit.add(0);
+        while(!queue.isEmpty()){
+            int x=queue.poll();
+            for(int i:rooms.get(x)){
+                if(!visit.contains(i)){
+                    queue.add(i);
+                    visit.add(i);
+                }
+                if(visit.size()==rooms.size()) return true;
+            }
+        }
+        return false;
+    }
+}
