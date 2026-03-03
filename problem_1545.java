@@ -9,4 +9,4 @@ class Solution {
             else return findKthBit(n-1,length-k+1)=='0'?'1':'0';
         }
     }
-}a
+}
