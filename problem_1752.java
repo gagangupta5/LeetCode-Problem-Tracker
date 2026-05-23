@@ -5,4 +5,4 @@ class Solution {
             if (nums[i] > nums[(i+1) % n] && ++count > 1) return false;
         return count <= 1;
     }
-}
+}b
