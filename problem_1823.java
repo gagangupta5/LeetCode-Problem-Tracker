@@ -8,7 +8,7 @@ class Solution {
             int i=0;
             while(i<k-1){
                 q.add(q.remove());
-                i++;
+                i++
             }
             q.remove();
         }
