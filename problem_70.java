@@ -21,10 +21,7 @@ class Solution {
         if(n<0) return 0;
         if(n==0) return 1;
         if(map.containsKey(n)) return map.get(n);
-        int prev1=climbStairs(n-1);
-        int prev2=climbStairs(n-2);
-        if(!map.containsKey(n-1)) map.put(n-1, prev1);
-        if(!map.containsKey(n-2)) map.put(n-2, prev2);
-        return prev1+prev2;
+        map.put(n, climbStairs(n-1)+climbStairs(n-2));
+        return map.get(n);
     }
 }
